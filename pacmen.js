@@ -1,7 +1,7 @@
 var pos = 0;
     const pacArray = [
-        ['PacMan1.png', 'PacMan2.png'],
-        ['PacMan3.png', 'PacMan4.png']
+        ['/images/PacMan1.png', '/images/PacMan2.png'],
+        ['/images/PacMan3.png', '/images/PacMan4.png']
     ];
     var direction = 0;
     const pacMen = [];
@@ -21,7 +21,7 @@ var pos = 0;
         let game = document.getElementById('game');
         let newimg = document.createElement('img');
         newimg.style.position = 'absolute';
-        newimg.src = 'PacMan1.png';
+        newimg.src = '/images/PacMan1.png';
         newimg.width = 100;
         newimg.style.left = position.x;
         // added + 35 to y so they don't spawn over buttons
@@ -44,9 +44,22 @@ var pos = 0;
 
             item.newimg.style.left = item.position.x;
             item.newimg.style.top = item.position.y;
-            console.log(item.newimg);
+          
+            //makes pacmen face the right way and open and close mouth
+            pos = (pos + 1) % 2;
+
+            if (item.velocity.x > 0) {
+            direction = 0;
+            } else {
+            direction = 1;
+            }
+
+            item.newimg.src = pacArray[direction][pos];
+
+            
         })
-        setTimeout(update, 20);
+        
+        setTimeout(update, 100);
     }
 
     function checkCollisions(item) {
@@ -54,8 +67,12 @@ var pos = 0;
             item.position.x + item.velocity.x < 0) item.velocity.x = -item.velocity.x;
         if (item.position.y + item.velocity.y + item.newimg.height > window.innerHeight ||
             item.position.y + item.velocity.y < 0) item.velocity.y = -item.velocity.y;
-    }
+          
+        
+
+        }
 
     function makeOne() {
+        
         pacMen.push(makePac()); // add a new PacMan
     }
