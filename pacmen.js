@@ -5,11 +5,11 @@ var pos = 0;
     ];
     var direction = 0;
     const pacMen = [];
-    // added + 35 to y so they don't spawn over buttons
+    
     function setToRandom(scale) {
         return {
             x: (Math.random() * scale),
-            y: (Math.random() * scale) + 35
+            y: (Math.random() * scale)
         }
     }
     // Factory to make a PacMan 
@@ -24,7 +24,8 @@ var pos = 0;
         newimg.src = 'PacMan1.png';
         newimg.width = 100;
         newimg.style.left = position.x;
-        newimg.style.top = position.y;
+        // added + 35 to y so they don't spawn over buttons
+        newimg.style.top = position.y + 35;
         game.appendChild(newimg);
         // new style of creating an object
         return {
