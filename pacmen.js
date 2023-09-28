@@ -50,6 +50,7 @@ var pos = 0;
         })
         //changes pos between 1 and 0 so mouth will open and shut
         pos = (pos + 1) % 2;
+        
         setTimeout(update, 100);
     }
 
