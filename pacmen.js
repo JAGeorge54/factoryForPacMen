@@ -48,9 +48,10 @@ var pos = 0;
             item.newimg.src = pacArray[direction][pos];
             
         })
+        
         //changes pos between 1 and 0 so mouth will open and shut
         pos = (pos + 1) % 2;
-        
+
         setTimeout(update, 100);
     }
 
@@ -59,6 +60,7 @@ var pos = 0;
             item.position.x + item.velocity.x < 0) item.velocity.x = -item.velocity.x;
         if (item.position.y + item.velocity.y + item.newimg.height > window.innerHeight ||
             item.position.y + item.velocity.y < 0) item.velocity.y = -item.velocity.y;
+
           //checks velocity and sets direction
             if (item.velocity.x > 0) {
                 direction = 0;
