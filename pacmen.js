@@ -24,8 +24,8 @@ var pos = 0;
         newimg.src = './images/PacMan1.png';
         newimg.width = 100;
         newimg.style.left = position.x;
-        // added + 35 to y so they don't spawn over buttons
-        newimg.style.top = position.y + 35;
+        // added + 55 to y so they don't spawn over buttons
+        newimg.style.top = position.y + 55;
         game.appendChild(newimg);
         // new style of creating an object
         return {
