@@ -12,7 +12,7 @@ Start by getting at least one pacman positioned and viewable.
 Run:
 copy index.html and pacmen.js into the same folder. Either drag index.html into the browser or right click and select open with using your preferred browser.
 
-
-In the future i would like to add several buttons that let you choose different images, or possibly change the color of the pacmen.
+Roadmap of future improvements:
+In the future I would like to add several buttons that let you choose different images, or possibly change the color of the pacmen.
 
 <img src="/images/PacMan1.png">
